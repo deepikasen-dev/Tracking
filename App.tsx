@@ -1,5 +1,6 @@
 import React from 'react';
-import { SafeAreaView, StatusBar, StyleSheet, Text, useColorScheme, View } from 'react-native';
+import { SafeAreaView, StatusBar, StyleSheet, useColorScheme } from 'react-native';
+import MapScreen from './src/screens/Map';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -7,11 +8,9 @@ const App = () => {
   return (
     <SafeAreaView style={ [ styles.container, { backgroundColor: isDarkMode ? '#000' : '#fff' } ] }>
       <StatusBar barStyle={ isDarkMode ? 'light-content' : 'dark-content' } />
-      <View style={ styles.content }>
-        <Text style={ [ styles.text, { color: isDarkMode ? '#fff' : '#000' } ] }>
-          Welcome to Your React Native App!
-        </Text>
-      </View>
+   
+        <MapScreen/>
+
     </SafeAreaView>
   );
 };
@@ -19,12 +18,6 @@ const App = () => {
 const styles = StyleSheet.create( {
   container: {
     flex: 1,
-  },
-  content: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 16,
   },
   text: {
     fontSize: 20,
